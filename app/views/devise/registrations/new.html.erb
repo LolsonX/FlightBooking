@@ -1,0 +1,77 @@
+<h2>Sign up</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="uk-panel-scrollable" style="height: 50vh">
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="uk-margin">
+    <div class="uk-inline uk-margin">
+      <a class="uk-form-icon" href="" uk-icon="icon: user"></a>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-input", placeholder: "Email address" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      <a class="uk-form-icon" href="" uk-icon="icon: lock"></a>
+      <%= f.password_field :password, autocomplete: "new-password", class: "uk-input", placeholder: "Password" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      <a class="uk-form-icon" href="" uk-icon="icon: lock"></a>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "uk-input", placeholder: "Confirm Password" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      <a class="uk-form-icon" href="" uk-icon="icon: info"></a>
+      <%= f.text_field :first_name, autocomplete: "first-name", class: "uk-input", placeholder: "First Name" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      <a class="uk-form-icon" href="" uk-icon="icon: info"></a>
+      <%= f.text_field :last_name, autocomplete: "last-name", class: "uk-input", placeholder: "Last Name" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      Birthdate
+      <%= f.date_field :birth_date, autocomplete: "birthdate", class: "uk-input", placeholder: "Last Name" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      <a class="uk-form-icon" href="" uk-icon="icon: info"></a>
+      <%= f.text_field :address, autocomplete: "last-name", class: "uk-input", placeholder: "Last Name" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      <a class="uk-form-icon" href="" uk-icon="icon: info"></a>
+      <%= f.text_field :id_document_number, autocomplete: "last-name", class: "uk-input", placeholder: "Id document number" %>
+    </div>
+
+    <br/>
+
+    <div class="uk-inline uk-margin">
+      <%= f.select :id_document_type, options_for_select(User.id_document_types.map {|key, value| [key.capitalize, value]}, @user.id_document_type), {},  {class: 'uk-select'} %>
+    </div>
+
+  </div>
+  </div>
+    <div class="uk-margin ">
+      <%= f.submit "Sign up", class: "uk-button uk-button-secondary uk-align-center" %>
+    </div>
+
+    <%= render "devise/shared/links" %>
+
+
+<% end %>
+
+

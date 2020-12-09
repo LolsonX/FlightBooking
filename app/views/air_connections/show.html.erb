@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin airport:</strong>
+  <%= @air_connection.origin_airport_id %>
+</p>
+
+<p>
+  <strong>Destination airport:</strong>
+  <%= @air_connection.destination_airport_id %>
+</p>
+
+<p>
+  <strong>Aircraft:</strong>
+  <%= @air_connection.aircraft %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @air_connection.distance %>
+</p>
+
+<p>
+  <strong>Segment number:</strong>
+  <%= @air_connection.segment_number %>
+</p>
+
+<p>
+  <strong>Economy seats:</strong>
+  <%= @air_connection.economy_seats %>
+</p>
+
+<p>
+  <strong>buisness seats:</strong>
+  <%= @air_connection.buisness_seats %>
+</p>
+
+<p>
+  <strong>First class seats:</strong>
+  <%= @air_connection.first_class_seats %>
+</p>
+
+<%= link_to 'Edit', edit_air_connection_path(@air_connection) %> |
+<%= link_to 'Back', air_connections_path %>

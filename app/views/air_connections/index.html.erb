@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Air Connections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Origin airport</th>
+      <th>Destination airport</th>
+      <th>Aircraft</th>
+      <th>Distance</th>
+      <th>Segment number</th>
+      <th>Economy seats</th>
+      <th>Buisness seats</th>
+      <th>First class seats</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @air_connections.each do |air_connection| %>
+      <tr>
+        <td><%= air_connection.origin_airport_id %></td>
+        <td><%= air_connection.destination_airport_id %></td>
+        <td><%= air_connection.aircraft %></td>
+        <td><%= air_connection.distance %></td>
+        <td><%= air_connection.segment_number %></td>
+        <td><%= air_connection.economy_seats %></td>
+        <td><%= air_connection.buisness_seats %></td>
+        <td><%= air_connection.first_class_seats %></td>
+        <td><%= link_to 'Show', air_connection %></td>
+        <td><%= link_to 'Edit', edit_air_connection_path(air_connection) %></td>
+        <td><%= link_to 'Destroy', air_connection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Air Connection', new_air_connection_path %>

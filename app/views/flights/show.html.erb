@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Air connection:</strong>
+  <%= @flight.air_connection_id %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @flight.departure_time %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @flight.arrival_time %>
+</p>
+
+<p>
+  <strong>Economy seat price:</strong>
+  <%= @flight.economy_seat_price %>
+</p>
+
+<p>
+  <strong>buisness seat price:</strong>
+  <%= @flight.buisness_seat_price %>
+</p>
+
+<p>
+  <strong>First class seat price:</strong>
+  <%= @flight.first_class_seat_price %>
+</p>
+
+<p>
+  <strong>Flying time:</strong>
+  <%= @flight.flying_time %>
+</p>
+
+<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<%= link_to 'Back', flights_path %>

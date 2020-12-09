@@ -1,0 +1,57 @@
+<%= form_with(model: air_connection, local: true) do |form| %>
+  <% if air_connection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(air_connection.errors.count, "error") %> prohibited this air_connection from being saved:</h2>
+
+      <ul>
+        <% air_connection.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :origin_airport_id %>
+    <%= form.text_field :origin_airport_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination_airport_id %>
+    <%= form.text_field :destination_airport_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aircraft %>
+    <%= form.text_field :aircraft %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distance %>
+    <%= form.number_field :distance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :segment_number %>
+    <%= form.text_field :segment_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :economy_seats %>
+    <%= form.number_field :economy_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buisness_seats %>
+    <%= form.number_field :buisness_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_class_seats %>
+    <%= form.number_field :first_class_seats %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
